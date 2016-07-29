@@ -21,8 +21,8 @@ ReactDOM.render((
 	   <Router history = {browserHistory}>
 	      <Route path = "/" component = {Login}>
 	         <IndexRoute component = {Main} />
-	         <Route path = "home" component = {Main} />
 	      </Route>
+	      <Route path = "/home" component = {Main} />
 	   </Router>
 	 </MuiThemeProvider>
 	</Provider>

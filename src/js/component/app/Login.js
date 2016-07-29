@@ -5,10 +5,12 @@ import { connect } from 'react-redux';
 import * as actionCreators from '../../actions/eventActions';
 import { Router, Route, Link, browserHistory, IndexRoute  } from 'react-router'
  
+
 export default class Login extends React.Component{
-    handleOnClick () {
-        this.props.history.push(null,"Main");
-    }
+    // handleOnClick () {
+    //     this.props.history.push(null,"Main");
+    // }
+
     render(){
         return(
             <div>
@@ -28,7 +30,7 @@ export default class Login extends React.Component{
                                             <div className="form-group">
                                                 <input type="password" className="form-control" placeholder="Password" name="password" value=""/>
                                             </div>
-                                            <button className="btn btn-lg btn-success.btn-outline btn-block" onClick={this.handleOnClick.bind(this)}></button>
+                                            <Link to="/home"> <button className="btn btn-lg btn-success.btn-outline btn-block">Login</button></Link>
                                         </fieldset>
                                     </form>
                                 </div>
