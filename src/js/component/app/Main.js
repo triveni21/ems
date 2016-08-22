@@ -3,6 +3,11 @@ import React from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import * as actionCreators from '../../actions/eventActions';
+import Header from './Header'
+import MenuItems from './MenuItems'
+import EventListing from './EventListing'
+import EventDetails from './EventDetails'
+import HorizontalScroll from './HorizontalScroll'
 
 function mapStateToProps(state){
 	return {
@@ -25,9 +30,11 @@ class Main extends React.Component {
 		console.log(this.props.events);
 		return (
 			<div>
-				<h1> Events </h1>
-				<p> {this.props.events.events.title} </p>
-				<p> {this.props.events.events.description} </p>
+				<Header className="header-div"/>
+				<br/><br/>
+				<HorizontalScroll className="img_container"/>
+				<br/><br/>
+				<MenuItems/>
 			</div>
 		);
 
