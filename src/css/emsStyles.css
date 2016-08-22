@@ -1,0 +1,29 @@
+.header-div {
+    height: 60px;
+    width: 370px;
+    float: left;
+}
+
+.search-bar-div {
+    height: 60px;
+    width: 650px;
+    float:left;
+    padding: 10px;
+}
+
+.searchBox-div {
+    height: 30px;
+    width: 650px;
+    font-size: 20px;
+}
+
+.logout-div{
+    height: 30px;
+    float: right;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+    width: 100%;
+    margin: auto;
+}
+
