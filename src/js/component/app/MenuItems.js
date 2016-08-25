@@ -5,15 +5,26 @@ import React from 'react'
 import {connect} from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as actionCreators from '../../actions/eventActions';
-import DropDownMenu from 'material-ui/DropDownMenu';
-import MenuItem from 'material-ui/MenuItem';
+import RaisedButton from 'material-ui/RaisedButton';
+import {Tabs, Tab} from 'material-ui/Tabs';
+import Slider from 'material-ui/Slider';
+import EventListing from './EventListing'
+import EventDetails from './EventDetails'
+var injectTapEventPlugin = require("react-tap-event-plugin");
+injectTapEventPlugin();
 
-const styles = {
-    customWidth: {
-        width: 200
-    },
+const buttonStyle = {
+    margin: 20
 };
 
+const tabStyles = {
+    headline: {
+        fontSize: 24,
+        paddingTop: 16,
+        marginBottom: 12,
+        fontWeight: 400,
+    },
+};
 class MenuItems extends  React.Component{
     constructor(props) {
         super(props);
@@ -23,25 +34,55 @@ class MenuItems extends  React.Component{
         };
     }
 
-    handleChange  (event, index, value) {
-        this.setState({value});
+    handleOnGoingEvents (){
+        this.props.actions.displayOnGoingEvents();
+    }
+
+    handleCulturalEvents(){
+        this.props.actions.displayCulturalEvents();
+    }
+
+    handleSportsEvents(){
+        this.props.actions.displaySportsEvents();
+    }
+
+    handleTechnicalEvents(){
+        this.props.actions.displayTechnicalEvents();
     }
 
     render(){
         return(
-            <div>
-                <br />
-                <DropDownMenu
-                    value={this.state.value}
-                    onChange={this.handleChange.bind(this)}
-                    style={styles.customWidth}
-                    autoWidth={false}
-                >
-                    <MenuItem value={1} primaryText="Table Tennis" />
-                    <MenuItem value={2} primaryText="Carrom" />
-                    <MenuItem value={3} primaryText="Chess" />
-                </DropDownMenu>
-            </div>
+                <div>
+                    <br />
+                    <Tabs>
+                        <Tab label="On Going Events"
+                             onActive={this.handleOnGoingEvents.bind(this)}
+                        >
+                            <br/>
+                            <div>On Going Events</div>
+                        </Tab>
+                        <Tab label="Cultural Events"
+                             onActive={this.handleCulturalEvents.bind(this)}
+                        >
+                            <br/>
+                            <div>Cultural Events</div>
+                        </Tab>
+                        <Tab
+                            label="Sports Events"
+                            onActive={this.handleSportsEvents.bind(this)}
+                        >
+                            <br/>
+                            <div>Sports Events</div>
+                        </Tab>
+                        <Tab
+                            label="Technical Events"
+                            onActive={this.handleTechnicalEvents.bind(this)}
+                        >
+                            <br/>
+                            <div>Technical Events</div>
+                        </Tab>
+                    </Tabs>
+                </div>
         );
     }
 }
@@ -51,7 +92,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-
+    actions: bindActionCreators(actionCreators, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(MenuItems);

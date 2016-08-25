@@ -8,6 +8,8 @@ import * as actionCreators from '../../actions/eventActions';
 
 class EventListing extends  React.Component{
     render(){
+        var activeEvent = this.props.eventFlag;
+
         return(
             <div className="container">
                 <div className="list-group">
