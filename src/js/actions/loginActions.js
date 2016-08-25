@@ -39,6 +39,17 @@ export function login(credentials){
 	}
 }
 
+export function logout(){
+	return (dispatch) => {
+		browserHistory.push("/");
+		return dispatch({
+			type: "APPLICATION_LOG_OUT",
+			payload: {
+				logged_in: false,
+				message: "Logged Out Successfully"
+			}})
+	};
+}
 export function fetchCredentials(){
 	return {
 		type: "FETCH_CREDENTIALS",
