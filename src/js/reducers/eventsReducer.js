@@ -2,7 +2,11 @@ export default function reducer(state={
 	events: [],
 	fetching: false,
 	fetched: false,
-	error:null
+	error:null,
+    onGoingEvents:'none',
+    culturalEvents:'none',
+    sportsEvents:'none',
+    technicalEvents:'none'
 	}, action){
 
 	switch (action.type) {
@@ -22,6 +26,26 @@ export default function reducer(state={
 			return {...state, fetching:false,  error: action.payload}
 			break;
 		}
+
+        case "FETCH_ONGOING_EVENTS":
+        {
+            return Object.assign({}, state, {onGoingEvents: 'block',culturalEvents:'none',sportsEvents:'none',technicalEvents:'none'})
+        }
+
+        case "FETCH_CULTURAL_EVENTS":
+        {
+            return Object.assign({}, state, {onGoingEvents: 'none',culturalEvents:'block',sportsEvents:'none',technicalEvents:'none'})
+        }
+
+        case "FETCH_SPORTS_EVENTS":
+        {
+            return Object.assign({}, state, {onGoingEvents: 'none',culturalEvents:'none',sportsEvents:'block',technicalEvents:'none'})
+        }
+
+        case "FETCH_TECHNICAL_EVENTS":
+        {
+            return Object.assign({}, state, {onGoingEvents: 'none',culturalEvents:'none',sportsEvents:'none',technicalEvents:'block'})
+        }
 	}
 
 	return state;

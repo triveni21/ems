@@ -23,6 +23,12 @@ export default function reducer(state={
 			break;
 		}
 
+		case "APPLICATION_LOG_OUT":
+		{
+            return Object.assign({}, state, {logged_in: action.payload.logged_in,credentials : {},message: action.payload.message})
+			break;
+		}
+
 		// case "UPDATE_USERNAME":
 		// {
 		// 	new_state = Object.assign({}, state, action.payload.username)
