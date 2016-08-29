@@ -59,27 +59,63 @@ class MenuItems extends  React.Component{
                              onActive={this.handleOnGoingEvents.bind(this)}
                         >
                             <br/>
-                            <div>On Going Events</div>
+                            <table>
+                                <tr>
+                                    <td style={{width:'350px'}}>
+                                        <EventListing eventFlag='On Going Events'/>
+                                    </td>
+                                    <td style={{width:'1050px'}}>
+                                        <EventDetails eventFlag='On Going Events'/>
+                                    </td>
+                                </tr>
+                            </table>
                         </Tab>
                         <Tab label="Cultural Events"
                              onActive={this.handleCulturalEvents.bind(this)}
                         >
                             <br/>
-                            <div>Cultural Events</div>
+                            <table>
+                                <tr>
+                                    <td style={{width:'350px'}}>
+                                        <EventListing eventFlag='Cultural Events'/>
+                                    </td>
+                                    <td style={{width:'1050px'}}>
+                                        <EventDetails eventFlag='Cultural Events'/>
+                                    </td>
+                                </tr>
+                            </table>
                         </Tab>
                         <Tab
                             label="Sports Events"
                             onActive={this.handleSportsEvents.bind(this)}
                         >
                             <br/>
-                            <div>Sports Events</div>
+                            <table>
+                                <tr>
+                                    <td style={{width:'350px'}}>
+                                        <EventListing eventFlag='Sports Events'/>
+                                    </td>
+                                    <td style={{width:'1050px'}}>
+                                        <EventDetails eventFlag='Sports Events'/>
+                                    </td>
+                                </tr>
+                            </table>
                         </Tab>
                         <Tab
                             label="Technical Events"
                             onActive={this.handleTechnicalEvents.bind(this)}
                         >
                             <br/>
-                            <div>Technical Events</div>
+                            <table>
+                                <tr>
+                                    <td style={{width:'350px'}}>
+                                        <EventListing eventFlag='Technical Events'/>
+                                    </td>
+                                    <td style={{width:'1050px'}}>
+                                        <EventDetails eventFlag='Technical Events'/>
+                                    </td>
+                                </tr>
+                            </table>
                         </Tab>
                     </Tabs>
                 </div>
