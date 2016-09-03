@@ -1,5 +1,5 @@
 export default function reducer(state={
-	events: [],
+	events: {},
 	fetching: false,
 	fetched: false,
 	error:null,
@@ -46,6 +46,13 @@ export default function reducer(state={
         {
             return Object.assign({}, state, {onGoingEvents: 'none',culturalEvents:'none',sportsEvents:'none',technicalEvents:'block'})
         }
+
+		case "CREATE_NEW_EVENT":
+		{
+			return Object.assign({}, state, {logged_in: action.payload.event, message: action.payload.message})
+			alert("Event Added Successfully");
+			break;
+		}
 	}
 
 	return state;
