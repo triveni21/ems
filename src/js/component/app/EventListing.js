@@ -33,7 +33,25 @@ const rightIconMenu = (
     </IconMenu>
 );
 
-class EventListing extends  React.Component{
+class EventListing extends React.Component{
+    createListItems(){
+        return this.props.data.map((event) => {
+           return(
+            <ListItem
+                leftAvatar={<Avatar src="images/ok-128.jpg" />}
+                primaryText={event.title}
+                secondaryText={
+                <p>
+                <span style={{color: darkBlack}}>Table Tennis</span> --
+                    The scores for today's match are as follows ...
+                </p>
+            }
+                secondaryTextLines={2}
+            />    
+            );
+        });
+    }
+
     render(){
         //var activeEvent = this.props.eventFlag;
 
@@ -42,74 +60,7 @@ class EventListing extends  React.Component{
                 <div>
                     <List>
                         <Subheader>{this.props.eventFlag}</Subheader>
-                        <ListItem
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
-                            primaryText="Sports"
-                            secondaryText={
-                            <p>
-                            <span style={{color: darkBlack}}>Table Tennis</span> --
-                                The scores for today's match are as follows ...
-                            </p>
-                        }
-                            secondaryTextLines={2}
-                        />
-
-                        <Divider inset={true} />
-
-                        <ListItem
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
-                            primaryText="Cultural Events"
-                            secondaryText={
-                            <p>
-                            <span style={{color: darkBlack}}>Dancing</span> --
-                                List of the participants and performances ..
-                            </p>
-                        }
-                            secondaryTextLines={2}
-                        />
-
-                        <Divider inset={true} />
-
-                        <ListItem
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
-                            primaryText="Sports"
-                            secondaryText={
-                            <p>
-                            <span style={{color: darkBlack}}>Chess</span> --
-                                The scores for today's match are as follows ...
-                            </p>
-                        }
-                            secondaryTextLines={2}
-                        />
-
-                        <Divider inset={true} />
-
-                        <ListItem
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
-                            primaryText="Technical"
-                            secondaryText={
-                            <p>
-                            <span style={{color: darkBlack}}>React Session</span> --
-                                Today's session will be conducted by ...
-                            </p>
-                        }
-                            secondaryTextLines={2}
-                        />
-
-                        <Divider inset={true} />
-
-                        <ListItem
-                            leftAvatar={<Avatar src="images/ok-128.jpg" />}
-                            primaryText="Cultural"
-                            secondaryText={
-                            <p>
-                            <span style={{color: darkBlack}}>Skit</span> --
-                                Participants for skit and skit timings...
-                            </p>
-                        }
-                            secondaryTextLines={2}
-                        />
-
+                        {this.createListItems}
                     </List>
                 </div>
             </div>
@@ -117,9 +68,13 @@ class EventListing extends  React.Component{
     }
 }
 
-const mapStateToProps = (state) => ({
+function mapStateToProps(state){
+    // alert(JSON.stringify(state.events));
+    return {
+        data: state.events["events"],
+    };
+}
 
-});
 
 const mapDispatchToProps = (dispatch) => ({
 

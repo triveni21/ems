@@ -23,7 +23,7 @@ function mapDispatchToProps(dispatch){
  
 class Main extends React.Component {
 	componentWillMount(){
-		this.props.actions.fetchEvents();
+		this.props.actions.displayOnGoingEvents();
 	}
 
 	render(){

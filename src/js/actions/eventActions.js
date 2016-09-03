@@ -11,8 +11,12 @@ export function fetchEvents(){
 }
 
 export function displayOnGoingEvents (){
+    // var jsonfile = require('jsonfile')
+    var data = require('json!../schema.json');
+    data = data["events"]
     return {
-        type: "FETCH_ONGOING_EVENTS"
+        type: "FETCH_ONGOING_EVENTS",
+        payload: data
     }
 }
 

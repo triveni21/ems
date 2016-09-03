@@ -28,8 +28,9 @@ export default function reducer(state={
 		}
 
         case "FETCH_ONGOING_EVENTS":
-        {
-            return Object.assign({}, state, {onGoingEvents: 'block',culturalEvents:'none',sportsEvents:'none',technicalEvents:'none'})
+        {	
+            return Object.assign({}, state, {onGoingEvents: 'block',culturalEvents:'none',sportsEvents:'none',technicalEvents:'none', events: action.payload})
+            break;
         }
 
         case "FETCH_CULTURAL_EVENTS":

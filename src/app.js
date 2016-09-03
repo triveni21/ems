@@ -24,7 +24,7 @@ ReactDOM.render((
 	      </Route>
 	      <Route path = "/home" component = {Main} />
 	   </Router>
-	 </MuiThemeProvider>
+	 </MuiThemeProvider>	
 	</Provider>
 ), document.getElementById('root'))
 

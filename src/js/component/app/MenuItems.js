@@ -34,8 +34,12 @@ class MenuItems extends  React.Component{
         };
     }
 
+    // componentWillMount(){
+    //   this.props.actions.displayOnGoingEvents();
+    // }
+
     handleOnGoingEvents (){
-        this.props.actions.displayOnGoingEvents();
+      this.props.actions.displayOnGoingEvents();
     }
 
     handleCulturalEvents(){
@@ -123,9 +127,12 @@ class MenuItems extends  React.Component{
     }
 }
 
-const mapStateToProps = (state) => ({
-
-});
+function mapStateToProps(state){
+    alert(JSON.stringify(state.events));
+    return {
+        data: state.events,
+    };
+}
 
 const mapDispatchToProps = (dispatch) => ({
     actions: bindActionCreators(actionCreators, dispatch)
