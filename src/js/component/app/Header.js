@@ -20,14 +20,14 @@ class Header extends  React.Component{
                             <CompanyLogo/>
                         </td>
                         <td style={{width:'200px'}}>
-                            <div>
-                                <p style={{color:'#00BCD4',fontsize:'100%'}}>Event Management System</p>
+                            <div style={{width:'350px',textAlign:'center'}}>
+                                <p style={{color:'#00BCD4',fontSize:'100%', fontWeight:'900', fontStretch:'ultra-expanded', fontStyle: 'oblique'}}>Synerzip Event Organizer</p>
                             </div>
                         </td>
                         <td style={{width:'200px'}}>
                             <SearchBox/>
                         </td>
-                        <td style={{width:'200px', padding : 25}} className="logout-div">
+                        <td style={{width:'200px'}} className="logout-div">
                             <CreateEvent/>
                         </td>
                         <td style={{width:'200px'}}>

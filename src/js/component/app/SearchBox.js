@@ -20,7 +20,7 @@ class SearchBox extends  React.Component{
     }
     render(){
         return(
-            <div className="search-bar-div" style={{width:'500px'}}>
+            <div className="search-bar-div">
                 <TextField
                     hintText="Search"
                     type = "text"

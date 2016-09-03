@@ -9,7 +9,7 @@ import * as actionCreators from '../../actions/eventActions';
 class CompanyLogo extends  React.Component{
     render(){
         return(
-             <div className="header-div">
+             <div>
                     <div style={{float:'left',padding:5}}><img src='./img/logo.png'/></div>
              </div>
         );
