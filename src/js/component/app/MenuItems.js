@@ -66,10 +66,10 @@ class MenuItems extends  React.Component{
                             <table>
                                 <tr>
                                     <td style={{width:'350px'}}>
-                                        <EventListing eventFlag='On Going Events'/>
+                                        <EventListing eventFlag='On Going Events' category_id='1'/>
                                     </td>
                                     <td style={{width:'1050px'}}>
-                                        <EventDetails eventFlag='On Going Events'/>
+                                        <EventDetails eventFlag='On Going Events' category_id='1'/>
                                     </td>
                                 </tr>
                             </table>
@@ -81,10 +81,10 @@ class MenuItems extends  React.Component{
                             <table>
                                 <tr>
                                     <td style={{width:'350px'}}>
-                                        <EventListing eventFlag='Cultural Events'/>
+                                        <EventListing eventFlag='Cultural Events' category_id='2'/>
                                     </td>
                                     <td style={{width:'1050px'}}>
-                                        <EventDetails eventFlag='Cultural Events'/>
+                                        <EventDetails eventFlag='Cultural Events' category_id='2'/>
                                     </td>
                                 </tr>
                             </table>
@@ -97,10 +97,10 @@ class MenuItems extends  React.Component{
                             <table>
                                 <tr>
                                     <td style={{width:'350px'}}>
-                                        <EventListing eventFlag='Sports Events'/>
+                                        <EventListing eventFlag='Sports Events' category_id='3'/>
                                     </td>
                                     <td style={{width:'1050px'}}>
-                                        <EventDetails eventFlag='Sports Events'/>
+                                        <EventDetails eventFlag='Sports Events' category_id='3'/>
                                     </td>
                                 </tr>
                             </table>
@@ -113,10 +113,10 @@ class MenuItems extends  React.Component{
                             <table>
                                 <tr>
                                     <td style={{width:'350px'}}>
-                                        <EventListing eventFlag='Technical Events'/>
+                                        <EventListing eventFlag='Technical Events' category_id='4'/>
                                     </td>
                                     <td style={{width:'1050px'}}>
-                                        <EventDetails eventFlag='Technical Events'/>
+                                        <EventDetails eventFlag='Technical Events' category_id='4'/>
                                     </td>
                                 </tr>
                             </table>
@@ -128,7 +128,7 @@ class MenuItems extends  React.Component{
 }
 
 function mapStateToProps(state){
-    alert(JSON.stringify(state.events));
+    //alert(JSON.stringify(state.events));
     return {
         data: state.events,
     };
