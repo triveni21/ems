@@ -14,6 +14,7 @@ import IconButton from 'material-ui/IconButton';
 import MoreVertIcon from 'material-ui/svg-icons/navigation/more-vert';
 import IconMenu from 'material-ui/IconMenu';
 import MenuItem from 'material-ui/MenuItem';
+import _ from 'lodash'
 
 const iconButtonElement = (
     <IconButton
@@ -34,33 +35,36 @@ const rightIconMenu = (
 );
 
 class EventListing extends React.Component{
-    createListItems(){
-        return this.props.data.map((event) => {
-           return(
-            <ListItem
-                leftAvatar={<Avatar src="images/ok-128.jpg" />}
-                primaryText={event.title}
-                secondaryText={
-                <p>
-                <span style={{color: darkBlack}}>Table Tennis</span> --
-                    The scores for today's match are as follows ...
+    handleSelectedEvent (optionId){
+        debugger;
+        alert("I am selected");
+        this.props.actions.setSelectedEvent(optionId);
+    }
+    render(){
+        let eventLists = _.map(this.props.data,(option) => {
+            if(option.category_id == this.props.category_id){
+                return(
+                    <ListItem
+                        leftAvatar={<Avatar src="img/On-Going-Image.png" />}
+                        primaryText={option.title}
+                        secondaryText={
+                <p onClick={this.handleSelectedEvent.bind(this,option.id)}>
+                <span style={{color: darkBlack}}>{option.title}</span> --
+                    {option.description}
                 </p>
             }
-                secondaryTextLines={2}
-            />    
-            );
+                        secondaryTextLines={2}
+                    />
+                );
+            }
         });
-    }
-
-    render(){
-        //var activeEvent = this.props.eventFlag;
 
         return(
             <div>
                 <div>
                     <List>
                         <Subheader>{this.props.eventFlag}</Subheader>
-                        {this.createListItems}
+                        {eventLists}
                     </List>
                 </div>
             </div>
@@ -77,7 +81,7 @@ function mapStateToProps(state){
 
 
 const mapDispatchToProps = (dispatch) => ({
-
+    actions: bindActionCreators(actionCreators, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventListing);
