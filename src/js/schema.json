@@ -12,43 +12,61 @@
 	"categories": [
 		{
 			"id": 1,
-			"name": "Sports",
+			"name": "OnGoingEvents",
 			"description":""
 		},
 		{
 			"id": 2,
-			"name": "Technical",
+			"name": "CulturalEvents",
 			"description":""
 		},
 		{
 			"id": 3,
-			"name": "Cultural",
+			"name": "SportsEvents",
 			"description":""
 		},
 		{
 			"id": 4,
-			"name": "Outings",
+			"name": "TechnicalEvents",
 			"description":""
 		}
 	],
 
 	"events": [
+        {
+          "id": 1,
+          "title": "Table Tennis",
+          "description": "Table tennis match",
+          "start_date": "2016-09-01",
+          "end_date": "2016-09-05",
+          "organizer": "Abc",
+          "category_id": 1
+        },
+        {
+          "id": 2,
+          "title": "Singing Competion",
+          "description": "Solo and group singing competition",
+          "start_date": "2016-09-01",
+          "end_date": "2016-09-05",
+          "organizer": "Abc",
+          "category_id": 2
+        },
 		{
-			"id": 1,
-			"title": "React Traning",
-			"description": "5 days react traning",
+			"id": 3,
+			"title": "Chess Competition",
+			"description": "5 days 5 matches",
 			"start_date": "2016-09-01",
 			"end_date": "2016-09-05",
 			"organizer": "Abc",
-			"category_id": 2
+			"category_id": 3
 		},
 		{
-			"id": 2,
-			"title": "Angular Traning",
-			"description": "5 days angular traning",
+			"id": 4,
+			"title": "Angular Training",
+			"description": "5 days angular training",
 			"start_date": "2016-09-04",
 			"end_date": "2016-09-09",
-			"category_id": 2
+			"category_id": 4
 		}
 	],
 
