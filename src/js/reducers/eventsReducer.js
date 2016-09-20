@@ -2,11 +2,7 @@ export default function reducer(state={
 	events: {},
 	fetching: false,
 	fetched: false,
-	error:null,
-    onGoingEvents:'none',
-    culturalEvents:'none',
-    sportsEvents:'none',
-    technicalEvents:'none'
+	error:null
 	}, action){
 
 	switch (action.type) {
@@ -29,23 +25,26 @@ export default function reducer(state={
 
         case "FETCH_ONGOING_EVENTS":
         {	
-            return Object.assign({}, state, {onGoingEvents: 'block',culturalEvents:'none',sportsEvents:'none',technicalEvents:'none', events: action.payload})
+            return Object.assign({}, state, {events: action.payload})
             break;
         }
 
         case "FETCH_CULTURAL_EVENTS":
         {
-            return Object.assign({}, state, {onGoingEvents: 'none',culturalEvents:'block',sportsEvents:'none',technicalEvents:'none'})
+            return Object.assign({}, state, {events: action.payload})
+			break;
         }
 
         case "FETCH_SPORTS_EVENTS":
         {
-            return Object.assign({}, state, {onGoingEvents: 'none',culturalEvents:'none',sportsEvents:'block',technicalEvents:'none'})
+            return Object.assign({}, state, {events: action.payload})
+			break;
         }
 
         case "FETCH_TECHNICAL_EVENTS":
         {
-            return Object.assign({}, state, {onGoingEvents: 'none',culturalEvents:'none',sportsEvents:'none',technicalEvents:'block'})
+            return Object.assign({}, state, {events: action.payload})
+			break;
         }
 
 		case "CREATE_NEW_EVENT":
