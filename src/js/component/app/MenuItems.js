@@ -54,6 +54,11 @@ class MenuItems extends  React.Component{
         this.props.actions.displayTechnicalEvents();
     }
 
+    handleSelectedEvent(eventSelected,optionId){
+        actions.setSelectedEvent(eventSelected,optionId);
+        //this.setState({eventSelected: eventSelected});
+    }
+
     render(){
         return(
                 <div>
@@ -66,7 +71,7 @@ class MenuItems extends  React.Component{
                             <table>
                                 <tr>
                                     <td style={{width:'350px'}}>
-                                        <EventListing eventFlag='On Going Events' category_id='1'/>
+                                        <EventListing eventFlag='On Going Events' category_id='1' OnEventClick={this.handleSelectedEvent.bind(this)}/>
                                     </td>
                                     <td style={{width:'1050px'}}>
                                         <EventDetails eventFlag='On Going Events' category_id='1'/>
@@ -81,7 +86,7 @@ class MenuItems extends  React.Component{
                             <table>
                                 <tr>
                                     <td style={{width:'350px'}}>
-                                        <EventListing eventFlag='Cultural Events' category_id='2'/>
+                                        <EventListing eventFlag='Cultural Events' category_id='2' OnEventClick={this.handleSelectedEvent.bind(this)}/>
                                     </td>
                                     <td style={{width:'1050px'}}>
                                         <EventDetails eventFlag='Cultural Events' category_id='2'/>
@@ -97,7 +102,7 @@ class MenuItems extends  React.Component{
                             <table>
                                 <tr>
                                     <td style={{width:'350px'}}>
-                                        <EventListing eventFlag='Sports Events' category_id='3'/>
+                                        <EventListing eventFlag='Sports Events' category_id='3' OnEventClick={this.handleSelectedEvent.bind(this)}/>
                                     </td>
                                     <td style={{width:'1050px'}}>
                                         <EventDetails eventFlag='Sports Events' category_id='3'/>
@@ -113,7 +118,7 @@ class MenuItems extends  React.Component{
                             <table>
                                 <tr>
                                     <td style={{width:'350px'}}>
-                                        <EventListing eventFlag='Technical Events' category_id='4'/>
+                                        <EventListing eventFlag='Technical Events' category_id='4' OnEventClick={this.handleSelectedEvent.bind(this)}/>
                                     </td>
                                     <td style={{width:'1050px'}}>
                                         <EventDetails eventFlag='Technical Events' category_id='4'/>
@@ -131,6 +136,7 @@ function mapStateToProps(state){
     //alert(JSON.stringify(state.events));
     return {
         data: state.events,
+        eventSelected : state.eventSelected
     };
 }
 
