@@ -2,7 +2,8 @@ export default function reducer(state={
 	events: {},
 	fetching: false,
 	fetched: false,
-	error:null
+	error:null,
+    eventSelected : false
 	}, action){
 
 	switch (action.type) {
@@ -53,6 +54,11 @@ export default function reducer(state={
 			alert("Event Added Successfully");
 			break;
 		}
+        case "SELECTED_EVENT_IN_LIST":
+        {
+            return Object.assign({},state,{eventSelected : action.payload})
+
+        }
 	}
 
 	return state;
