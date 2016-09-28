@@ -35,28 +35,28 @@ const rightIconMenu = (
 );
 
 class EventListing extends React.Component{
-    handleSelectedEvent (optionId){
+    handleSelectedEvent (eventSelected,optionId){
         debugger;
         alert("I am selected");
-        this.props.actions.setSelectedEvent(optionId);
+        var eventSelected = true;
+        this.props.OnEventClick(eventSelected,optionId);
     }
     render(){
-        let eventLists = _.map(this.props.data,(option) => {
-            if(option.category_id == this.props.category_id){
-                return(
-                    <ListItem
-                        leftAvatar={<Avatar src="img/On-Going-Image.png" />}
-                        primaryText={option.title}
-                        secondaryText={
-                <p onClick={this.handleSelectedEvent.bind(this,option.id)}>
+        debugger;
+        let eventLists = _.map(this.props.eventData,(option) => {
+            return(
+                <ListItem
+                    leftAvatar={<Avatar src="img/On-Going-Image.png" />}
+                    primaryText={option.title}
+                    secondaryText={
+                <p onClick={this.handleSelectedEvent.bind(true,option.id)}>
                 <span style={{color: darkBlack}}>{option.title}</span> --
                     {option.description}
                 </p>
             }
-                        secondaryTextLines={2}
-                    />
-                );
-            }
+                    secondaryTextLines={2}
+                />
+            );
         });
 
         return(
@@ -75,13 +75,12 @@ class EventListing extends React.Component{
 function mapStateToProps(state){
     // alert(JSON.stringify(state.events));
     return {
-        data: state.events["events"],
+        eventData: state.events["events"],
     };
 }
 
 
 const mapDispatchToProps = (dispatch) => ({
-    actions: bindActionCreators(actionCreators, dispatch)
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(EventListing);
