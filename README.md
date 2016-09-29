@@ -16,5 +16,5 @@ Clone this application and ...
 
 Developers
 ==========================
-Rajashri Bhat Udhoji
-Triveni Badgujar
+Rajashri Bhat Udhoji[rajbh9@gmail.com] &
+Triveni Badgujar[triveny21@gmail.com]
